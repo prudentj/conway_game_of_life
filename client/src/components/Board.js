@@ -28,7 +28,6 @@ const Board = props => {
                     const rowCells = []
                     for (var c = 0; c < rowNum; c++) {
                         rowCells.push(<Cell row={r} col={c} />)
-
                     }
                     return rowCells
                 }
