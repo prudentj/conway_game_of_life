@@ -15,39 +15,44 @@ const Board = props => {
     // const { appState, dispatch } = useContext(AppContext);
     // const { row, getRow } = useState('');
     // const { col, getCol } = useState('');
-    const [rowNum, setRowNum] = useState(25);
-    const [colNum, setColNum] = useState(25);
+    const [numRows, setNumRows] = useState(25);
+    const [numCols, setNumCols] = useState(25);
     const [boardCells, setBoardCells] = useState([]);
+    const { appState, dispatch } = useContext(AppContext);
 
     useEffect(() => {
         setBoardCells(() => {
-            const board = []
-            //Not very efficient I may need to come back and speed it up
-            for (var r = 0; r < rowNum; r++) {
-                board.push(() => {
-                    const rowCells = []
-                    for (var c = 0; c < rowNum; c++) {
-                        rowCells.push(<Cell row={r} col={c} />)
-                    }
-                    return rowCells
+            const board = new Array(numRows)
+            for (let i = 0; i < board.length; i++) {
+                board[i] = new Array(numCols)
+                console.log(board)
+            }
+            for (var r = 0; r < numRows; r++) {
+                for (var c = 0; c < numCols; c++) {
+                    board[r][c] = <Cell row={r} col={c} />
                 }
-                )
             }
             return board
         })
     }, [])
     const Board = styled.div`
-    display:flex;
-    border:black;
-`
+            display:flex;
+            border:black;
+        `
+    const Col = styled.div`
+        display:flex;
+        flex-flow:row nowrap;
+        width:100%;
+        `
     const Row = styled.div`
-    display:flex;
-`
-
+        display:flex;
+        flex-flow:column nowrap;
+        height:100%;
+    `
+    // There may be a problem where the board is on its side but it won't mess with functionality 
     return (
         <Board>
-            {/* {boardCells.map(()=>)} */}
-            <Cell />
+            {boardCells.map(col => <Row>{col.map(cell => <Col>{cell}</Col>)}</Row>)}
         </Board>
     );
 }
