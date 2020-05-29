@@ -84,8 +84,6 @@ const Board = () => {
                 // Alive are stored as true
                 // Handel the edges of the board 
                 let nearLiveCells = 0
-                // Do diagonals count as neighbors?
-
                 // Look into turning this logic into a function
                 // On left side
                 if (row !== 0) {

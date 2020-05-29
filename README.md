@@ -59,5 +59,5 @@ Implement 3 of these
 - [ ] Add an option that creates a random cell configuration that users can run
 - [ ] Add additional cell properties, like color or size, and incorporate them into your visualization
 - [x] Allow users to specify the speed of the simulation
-- [x]Provide functionality to manually step through the simulation one generation at a time, as opposed to animating automatically
+- [x] Provide functionality to manually step through the simulation one generation at a time, as opposed to animating automatically
 - [ ]Given a specific generation, calculate the configuration of cells at that point in time, and jump to that state, bypassing animation (i.e. skip ahead n generations).
