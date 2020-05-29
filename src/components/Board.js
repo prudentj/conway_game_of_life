@@ -1,6 +1,5 @@
 // Should look into useMemo or use Callback
 import React, { useState, useCallback, useRef } from 'react'
-//I was struggling with side effects and Immer was suggested
 import styled from 'styled-components'
 import { preset1, preset2, preset3 } from './Presets'
 
@@ -167,7 +166,7 @@ const Board = () => {
     // There may be a problem where the board is on its side but it won't mess with functionality 
     return (
         <>
-            {/* Control Pannel */}
+            {/* Control Panel */}
             <ControlPanel>
                 <h2>{`Gen: ${genNum}`}</h2>
 
